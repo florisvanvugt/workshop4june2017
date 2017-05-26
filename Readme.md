@@ -32,7 +32,12 @@ git clone git@github.com:florisvanvugt/workshop4june2017.git
 ```
 
 ### Step 3: Run check_env.py to check that dependencies are installed properly
-This repository contains the python script check_env.py which will try to import all the various libraries that we will use in the workshop. An error message will be displayed if something is missing. Otherwise, you're all set!
+This repository contains the python script check_env.py which will try to import all the various libraries that we will use in the workshop.
+```
+python check_env.py
+```
+
+An error message will be displayed if something is missing. Otherwise, you're all set!
 
 ### Step 4 (Optional): Download neuroimaging data and install additional packages
 The last section of the workshop will use a [freely available high-resolution 7-Tesla fMRI dataset](https://openfmri.org/dataset/ds000113b/) from an experiment on the perception of musical genres. This data is very large so you may not want to put it on your laptop. However, if you want to follow along:
