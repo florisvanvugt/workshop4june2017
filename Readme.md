@@ -18,6 +18,7 @@ Choose the option that applies to you.
   * seaborn (0.7.1)
   * numpy (1.12.1)
   * jupyter (1.0.0)
+
 For example, you can install these packages using `pip`:
 ```
 pip install pandas scikit-learn matplotlib seaborn numpy jupyter
@@ -68,7 +69,7 @@ This data was obtained from the OpenfMRI database. Its accession number is ds000
 
 
 
-### Opening the Jupyter Notebooks
+## Opening the Jupyter Notebooks
 
 We will teach the workshop from so-called [Jupyter Notebooks](http://jupyter.org/). We have added them to this repository so you can download them and follow along, and also refer back to them in the future. Simply click on them in Github to see their contents. Once downloaded, if you want to view them or execute code within them, you need to first run the **Jupyter Notebook App** as described here: [How to run a Jupyter Notebook](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html). Make sure you run the notebook app in the folder where you downloaded the notebooks.
 
