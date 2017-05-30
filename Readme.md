@@ -48,32 +48,34 @@ python check_env.py
 
 An error message will be displayed if something is missing. Otherwise, you're all set!
 
-### Step 4 (Optional): Download neuroimaging data and install additional packages
-The last section of the workshop will use a [freely available high-resolution 7-Tesla fMRI dataset](https://openfmri.org/dataset/ds000113b/) from an experiment on the perception of musical genres. This data is very large so you may not want to put it on your laptop. However, if you want to follow along:
+### Step 4 (Optional): Download neuroimaging data and install additional dependencies
+The last section of the workshop will use a [freely available high-resolution 7-Tesla fMRI dataset](https://openfmri.org/dataset/ds000113b/) from an experiment on the perception of musical genres. This data is very large (~30 GB) so you may not want to put it on your laptop. Some of the analyses we will go over will take too long to run during the workshop. However, if you want to follow along and finish running the analyses at home.
 1. Get the data
   * Install [git-annex](https://git-annex.branchable.com/)
   * `git clone http://psydata.ovgu.de/forrest_gump/.git data`
   * `cd data`
-  * `git-annex get stimulus/task002/ \ sub*/BOLD/task002_run*/bold_dico_bold7Tp1_to_subjbold7Tp1.nii.gz`
+  * ```
+  git-annex get stimulus/task002/ \
+  sub*/BOLD/task002_run*/bold_dico_bold7Tp1_to_subjbold7Tp1.nii.gz \
+  models/model001/* \
+  sub*/templates/bold7Tp1/qa/jointfgbrainmask_bold7Tp1_to_subjbold7Tp1.nii.gz \
+  sub*/model/model001/*
+  ```
 
-2. Install the following packages
+2. Install the following Python packages (available via conda or pip):
   * scipy
   * [pymvpa](http://www.pymvpa.org/installation.html#requirements)
   * nibabel
   * nilearn
+  * h5py
+  * nipy
+  * lxml
 
 This data was obtained from the OpenfMRI database. Its accession number is ds000113b.
 
 [Hanke M, Dinga R, Häusler C et al. High-resolution 7-Tesla fMRI data on the perception of musical genres – an extension to the studyforrest dataset. F1000Research 2015, 4:174 ](https://f1000research.com/articles/4-174/v1)
 
 
-
-
 ## Opening the Jupyter Notebooks
 
 We will teach the workshop from so-called [Jupyter Notebooks](http://jupyter.org/). We have added them to this repository so you can download them and follow along, and also refer back to them in the future. Simply click on them in Github to see their contents. Once downloaded, if you want to view them or execute code within them, you need to first run the **Jupyter Notebook App** as described here: [How to run a Jupyter Notebook](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/execute.html). Make sure you run the notebook app in the folder where you downloaded the notebooks.
-
-
-
-
-
