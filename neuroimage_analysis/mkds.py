@@ -9,7 +9,7 @@ smoothing of BOLD images with a Gaussian kernel of 2.0mm FWHM.
 The output dataset contains one sample of beta weights per run per stimulation
 category.
 
-This script is called with a zero-based subj index and yields an output dataset
+This script is called with a one-based subj index and yields an output dataset
 in a data/ subdirectory.
 
 Call once per subject.
@@ -26,9 +26,10 @@ import nibabel as nb
 
 
 # Set datapath to directory where Pandora data is
-datapath = '/Users/jthompson/data/studyforrest-paper-pandoradata/data'
+datapath = 'data'
 of = OpenFMRIDataset(datapath)
 
+# Increment first input argument to get subject number
 sub = int(sys.argv[1]) + 1
 
 
@@ -40,7 +41,7 @@ def smooth(img):
                           header=img.get_header())
 
 
-# With the OpenFMRIDataset source object imported above, PMVPA knows how the
+# With the OpenFMRIDataset source object imported above, PyMVPA knows how the
 # dataset is organized and can parse the directory structure automatically to
 # load the data from all runs.
 ds = of.get_model_bold_dataset(
