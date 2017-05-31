@@ -54,7 +54,8 @@ The last section of the workshop will use a [freely available high-resolution 7-
   * Install [git-annex](https://git-annex.branchable.com/)
   * `git clone http://psydata.ovgu.de/forrest_gump/.git data`
   * `cd data`
-  * ```
+  * 
+  ```
   git-annex get stimulus/task002/ \
   sub*/BOLD/task002_run*/bold_dico_bold7Tp1_to_subjbold7Tp1.nii.gz \
   models/model001/* \
