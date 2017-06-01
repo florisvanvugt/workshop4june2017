@@ -18,10 +18,11 @@ Choose the option that applies to you.
   * seaborn (0.7.1)
   * numpy (1.12.1)
   * jupyter (1.0.0)
+  * ipywidgets (optional)
 
 For example, you can install these packages using `pip`:
 ```
-pip install pandas scikit-learn matplotlib seaborn numpy jupyter
+pip install pandas scikit-learn matplotlib seaborn numpy jupyter ipywidgets
 ```
 
 * **Option 2**: If you don't already have python installed (or you want to start fresh), you want to get everything you need in one shot, and you have plenty of available storage on your laptop, download Anaconda for python 2.7 [here](https://www.continuum.io/downloads).
