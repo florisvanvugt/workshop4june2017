@@ -41,6 +41,9 @@ This repository, hosted on github, contains the materials that we will use in th
 git clone git@github.com:florisvanvugt/workshop4june2017.git
 ```
 
+If you have trouble with this step, you can also choose to download the files in a single ZIP file, by clicking the green "Clone or download" button in the repository page and clicking "Download ZIP" and extracting the downloaded file somewhere on your machine.
+
+
 ### Step 3: Run check_env.py to check that dependencies are installed properly
 This repository contains the python script `check_env.py` which will try to import all the various libraries that we will use in the workshop.
 ```
