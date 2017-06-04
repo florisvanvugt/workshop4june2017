@@ -26,11 +26,11 @@ import nibabel as nb
 
 
 # Set datapath to directory where Pandora data is
-datapath = 'data'
+datapath = 'neuroimage_analysis/data'
 of = OpenFMRIDataset(datapath)
 
 # Increment first input argument to get subject number
-sub = int(sys.argv[1]) + 1
+sub = int(sys.argv[1])
 
 
 def smooth(img):
@@ -44,6 +44,7 @@ def smooth(img):
 # With the OpenFMRIDataset source object imported above, PyMVPA knows how the
 # dataset is organized and can parse the directory structure automatically to
 # load the data from all runs.
+print('Making the dataset...')
 ds = of.get_model_bold_dataset(
     model_id=1, subj_id=sub,
     flavor='dico_bold7Tp1_to_subjbold7Tp1',
@@ -57,4 +58,10 @@ ds = of.get_model_bold_dataset(
     time_attr='time_coords',
     condition_attr='condition')
 
-h5save(_opj('data', 'sub%.3i_2.0mm_hrf.hdf5' % sub), ds)
+# Inspect the dataset
+ds.shape
+
+# Save the new dataset in a single hdf file
+print('Saving the dataset in hdf.')
+h5save(_opj(datapath, 'sub%.3i_2.0mm_hrf.hdf5' % sub), ds)
+print('done')
