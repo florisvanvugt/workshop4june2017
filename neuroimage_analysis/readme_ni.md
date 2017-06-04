@@ -48,6 +48,10 @@ The output is one result searchlight map in the results/ subdirectory.
 
 Call once per subject and desired searchlight map.
 
+### `load_sl_results.py`
+Loads the searchlight results in hdf and converts and saves them to nifti
+format so that they can be opened in common neuroimaging software.
+
 ### `pymvpa2_zscore_ds.py`
 Auxillary script passed to the pymvpa command line interface in `dosl.sh`
 
