@@ -8,12 +8,15 @@ from mvpa2.clfs.knn import kNN
 from mvpa2.generators.partition import NFoldPartitioner
 from mvpa2.measures.base import CrossValidation
 from mvpa2.misc.errorfx import mean_match_accuracy
-from mvpa2.mappers.fx import mean_sample
 
-sub = 1
-ds = h5load(_opj('data', 'sub%.3i_2.0mm_hrf.hdf5' % sub))
+sub = 3
+datapath = 'neuroimage_analysis/data'
+ds = h5load(_opj(datapath, 'sub%.3i_2.0mm_hrf.hdf5' % sub))
 ds.sa['targets'] = ds.sa.condition
 zscore(ds, chunks_attr=None)
+
+# Here, the chunks attribute indicates experimental runs
+ds.chunks
 
 # Create a k-nearest neighbors classifier to train
 clf = kNN(k=2)
@@ -22,7 +25,6 @@ cv = CrossValidation(
         clf,
         NFoldPartitioner(),
         errorfx=mean_match_accuracy,
-        postproc=mean_sample(),
         enable_ca=['stats'])
 
 # Perform the cross validation
